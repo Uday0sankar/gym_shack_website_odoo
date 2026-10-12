@@ -1,0 +1,268 @@
+<odoo>
+    <template id="gym_shack_website.homepage_template" name="Gym Shack Homepage">
+        <t t-call="website.layout">
+            <t t-set="page_title">Gym Shack Fitness</t>
+            <div class="gym-shack-page">
+                <header class="gym-shack-header" id="home">
+                    <nav class="gym-shack-nav">
+                        <div class="gym-shack-nav-inner">
+                            <a href="#home" class="gym-shack-brand" aria-label="Gym Shack home">
+                                <span class="brand-wordmark">GYM SHACK</span>
+                            </a>
+                            <div class="gym-shack-nav-links">
+                                <a href="#home">HOME</a>
+                                <a href="#programs">PROGRAMS</a>
+                                <a href="#schedule">SCHEDULE</a>
+                                <a href="#pricing">PRICING</a>
+                                <a href="#contact">CONTACT</a>
+                            </div>
+                            <div class="gym-shack-nav-actions">
+                                <a t-att-href="config.hero_primary_url or '/gym-shack'" class="btn btn-primary">JOIN NOW</a>
+                                <button type="button" class="menu-toggle" aria-label="Open menu">☰</button>
+                            </div>
+                        </div>
+                        <div class="mobile-menu">
+                            <a href="#home">HOME</a>
+                            <a href="#programs">PROGRAMS</a>
+                            <a href="#schedule">SCHEDULE</a>
+                            <a href="#pricing">PRICING</a>
+                            <a href="#contact">CONTACT</a>
+                            <a t-att-href="config.hero_primary_url or '/gym-shack'" class="btn btn-primary mobile-join">JOIN NOW</a>
+                        </div>
+                    </nav>
+                </header>
+
+                <section class="gym-shack-hero" id="home-hero">
+                    <div class="hero-overlay"/>
+                    <div class="hero-content">
+                        <div class="hero-kicker" t-esc="config.hero_eyebrow or 'WELCOME TO GYM SHACK'"/>
+                        <h1>
+                            <span t-esc="config.hero_title or 'BUILT.'"/>
+                            <br/>
+                            <span class="text-gold" t-esc="config.hero_title_alt or 'NOT BORN.'"/>
+                        </h1>
+                        <p class="hero-subtitle">
+                            <t t-esc="config.hero_subtitle or 'Elite International Machines &amp; Expert Trainers'"/>
+                        </p>
+                        <div class="hero-highlights">
+                            <div class="highlight-item">
+                                <span class="icon">🏋</span>
+                                <div><strong>STRONGER BODY</strong><small>Better Performance</small></div>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="icon">🧠</span>
+                                <div><strong>BETTER MINDSET</strong><small>Stronger Discipline</small></div>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="icon">👑</span>
+                                <div><strong>BETTER YOU</strong><small>Everyday</small></div>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a t-att-href="config.hero_primary_url or '/gym-shack'" class="btn btn-primary" t-esc="config.hero_primary_text or 'START YOUR JOURNEY'"/>
+                            <a t-att-href="config.hero_secondary_url or '#programs'" class="btn btn-secondary" t-esc="config.hero_secondary_text or 'EXPLORE PROGRAMS'"/>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="gym-shack-section programs-section" id="programs">
+                    <div class="section-header">
+                        <div class="eyebrow">OUR PROGRAMS</div>
+                        <h2>TRAIN YOUR WAY</h2>
+                    </div>
+                    <div class="programs-marquee">
+                        <t t-foreach="programs or []" t-as="program">
+                            <article class="program-card">
+                                <div class="program-media" t-att-style="'background-image: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url(%s);' % (program.image_url or 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80')">
+                                    <span class="program-tag" t-esc="program.subtitle or program.name"/>
+                                </div>
+                                <div class="program-body">
+                                    <h3 t-esc="program.name"/>
+                                    <p t-esc="program.description or program.long_description or ''"/>
+                                    <ul>
+                                        <t t-set="benefits" t-value="(program.benefits or '').split(',')"/>
+                                        <t t-foreach="benefits" t-as="benefit">
+                                            <t t-if="benefit.strip()">
+                                                <li t-esc="benefit.strip()"/>
+                                            </t>
+                                        </t>
+                                    </ul>
+                                </div>
+                            </article>
+                        </t>
+                    </div>
+                </section>
+
+                <section class="gym-shack-section features-section" id="schedule">
+                    <div class="feature-layout">
+                        <div class="feature-copy">
+                            <div class="eyebrow">WHY CHOOSE US</div>
+                            <h2>WHY CHOOSE GYM SHACK?</h2>
+                            <p>Top-notch equipment, scientific training and a motivating environment built for results.</p>
+                            <ul class="check-list">
+                                <li>New International Machines</li>
+                                <li>Hygienic &amp; Spacious Ambience</li>
+                                <li>Certified Expert Trainers</li>
+                            </ul>
+                            <div class="feature-quote">Stronger Every Day.</div>
+                        </div>
+                        <div class="feature-grid">
+                            <t t-foreach="features or []" t-as="feature">
+                                <article class="feature-card">
+                                    <div class="feature-image" t-att-style="'background-image: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.7)), url(%s);' % (feature.image_url or 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80')"/>
+                                    <div class="feature-content">
+                                        <span class="feature-icon">★</span>
+                                        <h3 t-esc="feature.name"/>
+                                        <p t-esc="feature.description or ''"/>
+                                    </div>
+                                </article>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="gym-shack-section hours-section">
+                    <div class="hours-card">
+                        <div class="hours-copy">
+                            <div class="eyebrow">OPERATING HOURS</div>
+                            <div class="clock-badge">⏰</div>
+                            <div class="time-entry">
+                                <span>Morning</span>
+                                <strong t-esc="config.morning_open or '5:30 AM' + ' - ' + (config.morning_close or '10:00 AM')"/>
+                            </div>
+                            <div class="time-entry">
+                                <span>Evening</span>
+                                <strong t-esc="config.evening_open or '4:30 PM' + ' - ' + (config.evening_close or '10:00 PM')"/>
+                            </div>
+                        </div>
+                        <div class="hours-message">
+                            <h3>WE ARE HERE FOR YOU</h3>
+                            <p>Our doors are open to help you achieve your fitness goals. Visit us during our operating hours and start your transformation journey today.</p>
+                            <div class="status-pill">OPEN ALL DAYS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="gym-shack-section pricing-section" id="pricing">
+                    <div class="section-header center">
+                        <div class="eyebrow">MEMBERSHIP PLANS</div>
+                        <h2>PICK YOUR PLAN</h2>
+                    </div>
+                    <div class="pricing-grid">
+                        <t t-foreach="plans or []" t-as="plan">
+                            <article class="pricing-card">
+                                <div class="pricing-header">
+                                    <span class="pricing-badge" t-esc="plan.badge or 'POPULAR'"/>
+                                    <t t-if="plan.featured">
+                                        <span class="pricing-featured">BEST VALUE</span>
+                                    </t>
+                                </div>
+                                <h3 t-esc="plan.name"/>
+                                <div class="price-row">
+                                    <span class="price" t-esc="'AED %.2f' % plan.price if plan.price else 'AED 0.00'"/>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p class="pricing-desc" t-esc="plan.description or ''"/>
+                                <ul>
+                                    <li>Full Gym Floor Access</li>
+                                    <li>Locker Room &amp; Showers</li>
+                                    <li>General Workout Guidance</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary" t-esc="plan.call_to_action or 'CHOOSE PLAN'"/>
+                            </article>
+                        </t>
+                    </div>
+                </section>
+
+                <section class="gym-shack-section contact-section" id="contact">
+                    <div class="contact-container">
+                        <div class="contact-details">
+                            <div class="eyebrow">GET IN TOUCH</div>
+                            <h2>WE'RE HERE TO<br/>POWER YOUR JOURNEY</h2>
+                            <div class="contact-card">
+                                <strong>Location</strong>
+                                <p t-esc="config.address_line_1 or 'Hat Complex, 2nd Floor'"/>
+                                <p t-esc="config.address_line_2 or 'Near Federal Bank, Meloor'"/>
+                                <p t-esc="config.address_line_3 or 'Chalakudy, Kerala 680311'"/>
+                            </div>
+                            <div class="contact-card">
+                                <strong>Phone</strong>
+                                <p t-esc="config.contact_phone or '91885 26266'"/>
+                            </div>
+                            <div class="contact-card">
+                                <strong>Email</strong>
+                                <p t-esc="config.contact_email or 'gymshack.club@gmail.com'"/>
+                            </div>
+                            <div class="contact-card">
+                                <strong>Hours</strong>
+                                <p><t t-esc="config.morning_open or '5:30 AM'"/> - <t t-esc="config.morning_close or '10:00 AM'"/></p>
+                                <p><t t-esc="config.evening_open or '4:30 PM'"/> - <t t-esc="config.evening_close or '10:00 PM'"/></p>
+                            </div>
+                        </div>
+                        <div class="contact-form-wrap">
+                            <form method="post" action="/gym-shack/contact" class="contact-form">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="form-row">
+                                    <input type="text" name="name" placeholder="YOUR NAME" required="required"/>
+                                    <input type="email" name="email" placeholder="EMAIL ADDRESS" required="required"/>
+                                </div>
+                                <div class="form-row">
+                                    <input type="tel" name="phone" placeholder="PHONE NUMBER"/>
+                                    <input type="text" name="subject" placeholder="SUBJECT"/>
+                                </div>
+                                <textarea name="message" rows="5" placeholder="YOUR MESSAGE" required="required"/>
+                                <button type="submit" class="btn btn-primary submit-btn">SEND MESSAGE</button>
+                            </form>
+                            <t t-if="submitted">
+                                <div class="success-message">Message sent successfully.</div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="gym-shack-footer">
+                    <div class="footer-grid">
+                        <div>
+                            <div class="brand-wordmark">GYM SHACK</div>
+                            <p t-esc="config.brand_tagline or 'Built different. Trained different.'"/>
+                            <div class="social-links">
+                                <a t-att-href="config.social_facebook or '#'">Facebook</a>
+                                <a t-att-href="config.social_instagram or '#'">Instagram</a>
+                                <a t-att-href="config.social_youtube or '#'">YouTube</a>
+                                <a t-att-href="config.social_whatsapp or '#'">WhatsApp</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>QUICK LINKS</h4>
+                            <ul>
+                                <li><a href="#home">HOME</a></li>
+                                <li><a href="#programs">PROGRAMS</a></li>
+                                <li><a href="#pricing">PRICING</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>CONTACT US</h4>
+                            <ul>
+                                <li t-esc="config.address_line_1 or 'Hat Complex, 2nd Floor'"/>
+                                <li t-esc="config.contact_phone or '91885 26266'"/>
+                                <li t-esc="config.contact_email or 'gymshack.club@gmail.com'"/>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>STAY CONNECTED</h4>
+                            <div class="newsletter-box">
+                                <input type="email" placeholder="EMAIL ADDRESS"/>
+                                <button type="button">SUBSCRIBE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <span>© 2025 Gym Shack Fitness. All rights reserved.</span>
+                        <span>Privacy Policy | Terms &amp; Conditions</span>
+                    </div>
+                </footer>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,156 @@
+<odoo>
+    <record id="gym_shack_default_config" model="gym.shack.config">
+        <field name="name">Default</field>
+        <field name="company_name">Gym Shack Fitness</field>
+        <field name="brand_tagline">Built different. Trained different.</field>
+        <field name="hero_eyebrow">WELCOME TO GYM SHACK</field>
+        <field name="hero_title">BUILT.</field>
+        <field name="hero_title_alt">NOT BORN.</field>
+        <field name="hero_subtitle">Elite International Machines &amp; Expert Trainers</field>
+        <field name="hero_primary_text">START YOUR JOURNEY</field>
+        <field name="hero_secondary_text">EXPLORE PROGRAMS</field>
+        <field name="hero_primary_url">/gym-shack</field>
+        <field name="hero_secondary_url">#programs</field>
+        <field name="contact_phone">91885 26266</field>
+        <field name="contact_email">gymshack.club@gmail.com</field>
+        <field name="address_line_1">Hat Complex, 2nd Floor</field>
+        <field name="address_line_2">Near Federal Bank, Meloor</field>
+        <field name="address_line_3">Chalakudy, Kerala 680311</field>
+        <field name="morning_open">5:30 AM</field>
+        <field name="morning_close">10:00 AM</field>
+        <field name="evening_open">4:30 PM</field>
+        <field name="evening_close">10:00 PM</field>
+    </record>
+
+    <record id="gym_shack_program_nutrition" model="gym.shack.program">
+        <field name="name">Best Nutrition Plan</field>
+        <field name="subtitle">Nutrition</field>
+        <field name="description">Custom macro &amp; diet coaching</field>
+        <field name="long_description">Personalized nutrition plans tailored to your body goals, schedule, and lifestyle.</field>
+        <field name="benefits">Personalized macro calculations,Weekly meal planning,Supplement guidance,Progress tracking &amp; adjustments</field>
+        <field name="image_url">https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="sequence">1</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_program_yoga" model="gym.shack.program">
+        <field name="name">Yoga Sessions</field>
+        <field name="subtitle">Yoga</field>
+        <field name="description">Mind, flexibility, and recovery</field>
+        <field name="long_description">Experience restorative movement sessions focused on mobility, posture, and recovery.</field>
+        <field name="benefits">Improved flexibility &amp; mobility,Stress reduction techniques,Enhanced recovery,Mind-body connection</field>
+        <field name="image_url">https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="sequence">2</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_program_weight_loss" model="gym.shack.program">
+        <field name="name">Weight Loss Program</field>
+        <field name="subtitle">Weight Loss</field>
+        <field name="description">Shredding &amp; conditioning</field>
+        <field name="long_description">High-intensity training and guided nutrition for fat loss while preserving lean mass.</field>
+        <field name="benefits">Metabolic conditioning,Fat-burning workouts,Body composition tracking,Nutritional meal plans</field>
+        <field name="image_url">https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="sequence">3</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_program_weight_gain" model="gym.shack.program">
+        <field name="name">Weight Gaining Program</field>
+        <field name="subtitle">Weight Gain</field>
+        <field name="description">Hypertrophy &amp; mass building</field>
+        <field name="long_description">Progressive overload and calorie-surplus nutrition built for clean muscle gain.</field>
+        <field name="benefits">Progressive overload training,Calorie surplus meal plans,Recovery optimization,Strength progression tracking</field>
+        <field name="image_url">https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="sequence">4</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_program_bodybuilding" model="gym.shack.program">
+        <field name="name">Bodybuilding Program</field>
+        <field name="subtitle">Bodybuilding</field>
+        <field name="description">Pro-level contest prep</field>
+        <field name="long_description">Periodized training and nutrition designed for peak condition and contest preparation.</field>
+        <field name="benefits">Periodized training cycles,Contest prep guidance,Posing practice sessions,Peak week protocols</field>
+        <field name="image_url">https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="sequence">5</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_program_fitness" model="gym.shack.program">
+        <field name="name">Body Fitness Program</field>
+        <field name="subtitle">Fitness</field>
+        <field name="description">General health &amp; tone</field>
+        <field name="long_description">Balanced training for strength, tone, mobility, and sustainable progress.</field>
+        <field name="benefits">Functional strength training,Cardiovascular conditioning,Core stability work,Flexibility routines</field>
+        <field name="image_url">https://images.unsplash.com/photo-1532384665558-8f3c9d3f5a4a?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="sequence">6</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_feature_equipment" model="gym.shack.feature">
+        <field name="name">NEW INTERNATIONAL MACHINES</field>
+        <field name="description">Premium grade equipment</field>
+        <field name="image_url">https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="icon_name">Dumbbell</field>
+        <field name="sequence">1</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_feature_cardio" model="gym.shack.feature">
+        <field name="name">BEST CARDIO SESSIONS</field>
+        <field name="description">Burn more. Live better</field>
+        <field name="image_url">https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="icon_name">Heart</field>
+        <field name="sequence">2</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_feature_trainers" model="gym.shack.feature">
+        <field name="name">FRIENDLY EXPERT TRAINERS</field>
+        <field name="description">Personalized attention</field>
+        <field name="image_url">https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=900&amp;q=80</field>
+        <field name="icon_name">Users</field>
+        <field name="sequence">3</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_plan_standard" model="gym.shack.plan">
+        <field name="name">Monthly Standard Membership</field>
+        <field name="plan_type">gym_membership</field>
+        <field name="description">Full access to gym facilities, lockers, and standard cardio &amp; weights.</field>
+        <field name="price">350.00</field>
+        <field name="original_price">400.00</field>
+        <field name="badge">POPULAR</field>
+        <field name="featured">False</field>
+        <field name="call_to_action">CHOOSE MEMBERSHIP</field>
+        <field name="sequence">1</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_plan_quarterly" model="gym.shack.plan">
+        <field name="name">Quarterly Performance Membership</field>
+        <field name="plan_type">registration</field>
+        <field name="description">Quarterly commitment with trainer consultation and performance tracking.</field>
+        <field name="price">950.00</field>
+        <field name="original_price">1200.00</field>
+        <field name="badge">RECOMMENDED</field>
+        <field name="featured">True</field>
+        <field name="call_to_action">CHOOSE REGISTRATION</field>
+        <field name="sequence">2</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="gym_shack_plan_vip" model="gym.shack.plan">
+        <field name="name">Annual VIP All-Access Membership</field>
+        <field name="plan_type">gym_membership</field>
+        <field name="description">Unlimited access, trainer consult, merchandise kit, and 30-day freeze entitlement.</field>
+        <field name="price">2900.00</field>
+        <field name="original_price">4200.00</field>
+        <field name="badge">BEST VALUE</field>
+        <field name="featured">True</field>
+        <field name="call_to_action">CHOOSE PLAN</field>
+        <field name="sequence">3</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

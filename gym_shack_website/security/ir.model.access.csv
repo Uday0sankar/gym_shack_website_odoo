@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gym_shack_config_public,gym.shack.config public,model_gym_shack_config,,1,0,0,0
+access_gym_shack_config_manager,gym.shack.config manager,model_gym_shack_config,,1,1,1,1
+access_gym_shack_program_public,gym.shack.program public,model_gym_shack_program,,1,0,0,0
+access_gym_shack_program_manager,gym.shack.program manager,model_gym_shack_program,,1,1,1,1
+access_gym_shack_feature_public,gym.shack.feature public,model_gym_shack_feature,,1,0,0,0
+access_gym_shack_feature_manager,gym.shack.feature manager,model_gym_shack_feature,,1,1,1,1
+access_gym_shack_plan_public,gym.shack.plan public,model_gym_shack_plan,,1,0,0,0
+access_gym_shack_plan_manager,gym.shack.plan manager,model_gym_shack_plan,,1,1,1,1
+access_gym_shack_contact_message_public,gym.shack.contact.message public,model_gym_shack_contact_message,,1,0,0,0
+access_gym_shack_contact_message_manager,gym.shack.contact.message manager,model_gym_shack_contact_message,,1,1,1,1
